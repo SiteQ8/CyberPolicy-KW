@@ -1,9 +1,21 @@
-<svg width="900" height="200" xmlns="http://www.w3.org/2000/svg">
-  <rect width="900" height="200" fill="#155DA1"/>
-  <rect x="0" y="192" width="900" height="8" fill="#0D4A7A"/>
-  <text x="860" y="48" text-anchor="end" font-family="monospace" font-size="10" fill="rgba(255,255,255,0.5)" letter-spacing="3">CBK CORF · NIST CSF · CIS CONTROLS · ISO 27001 · CITRA</text>
-  <text x="860" y="100" text-anchor="end" font-family="Tahoma, sans-serif" font-size="38" fill="#FFFFFF" font-weight="700">سياسات أمن المعلومات</text>
-  <text x="860" y="130" text-anchor="end" font-family="sans-serif" font-size="16" fill="rgba(255,255,255,0.7)">CyberPolicy-KW</text>
-  <text x="860" y="160" text-anchor="end" font-family="monospace" font-size="10" fill="rgba(255,255,255,0.4)" letter-spacing="1">25 POLICIES | 5 FRAMEWORKS | BILINGUAL AR/EN | POLICY GENERATOR | COMPLIANCE TRACKER | MADE IN KUWAIT</text>
-  <text x="40" y="180" font-family="monospace" font-size="9" fill="rgba(255,255,255,0.3)">Ali AlEnezi — @SiteQ8 — MIT License</text>
+<svg width="900" height="220" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="220" fill="#1B3A5C"/>
+  <rect x="0" y="0" width="900" height="4" fill="#2D7DD2"/>
+  <text x="860" y="52" text-anchor="end" font-family="sans-serif" font-size="36" font-weight="800" fill="#FFFFFF" direction="rtl">مستودع سياسات أمن المعلومات</text>
+  <text x="40" y="52" font-family="monospace" font-size="14" fill="#2D7DD2" letter-spacing="2">CyberPolicy-KW</text>
+  <text x="860" y="84" text-anchor="end" font-family="sans-serif" font-size="15" fill="#8CB4D8" direction="rtl">سياسات وإجراءات ومعايير وإرشادات — ثنائي اللغة — للمؤسسات الكويتية</text>
+  <text x="40" y="84" font-family="monospace" font-size="11" fill="#5A8BB5">Information Security Policies &amp; Procedures</text>
+  <rect x="40" y="105" width="820" height="1" fill="#2D7DD2" opacity="0.3"/>
+  <text x="860" y="132" text-anchor="end" font-family="monospace" font-size="11" fill="#5A8BB5" letter-spacing="1">CBK CORF v1.0  |  NIST CSF v2.0  |  CIS Controls v8.1  |  ISO 27001:2022  |  CITRA</text>
+  <rect x="40" y="155" width="128" height="28" rx="4" fill="#2D7DD2" opacity="0.2"/>
+  <text x="104" y="173" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">25 سياسة</text>
+  <rect x="180" y="155" width="140" height="28" rx="4" fill="#2D7DD2" opacity="0.2"/>
+  <text x="250" y="173" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">مولّد المستندات</text>
+  <rect x="332" y="155" width="140" height="28" rx="4" fill="#2D7DD2" opacity="0.2"/>
+  <text x="402" y="173" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">متابعة الالتزام</text>
+  <rect x="484" y="155" width="128" height="28" rx="4" fill="#2D7DD2" opacity="0.2"/>
+  <text x="548" y="173" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">تحميل DOC/PDF</text>
+  <rect x="624" y="155" width="112" height="28" rx="4" fill="#2D7DD2" opacity="0.2"/>
+  <text x="680" y="173" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">عربي + English</text>
+  <text x="860" y="207" text-anchor="end" font-family="monospace" font-size="9" fill="#5A8BB5">Made in Kuwait — @SiteQ8 — Ali AlEnezi — MIT License</text>
 </svg>
