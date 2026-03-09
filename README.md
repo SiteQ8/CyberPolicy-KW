@@ -4,55 +4,77 @@
 
 <br>
 
-[![Live](https://img.shields.io/badge/Live-App-194D8C?style=flat-square)](https://siteq8.github.io/CyberPolicy-KW)
-[![License](https://img.shields.io/badge/License-MIT-194D8C?style=flat-square)](LICENSE)
-[![Policies](https://img.shields.io/badge/Policies-25-194D8C?style=flat-square)]()
-[![Bilingual](https://img.shields.io/badge/AR%20%7C%20EN-Bilingual-194D8C?style=flat-square)]()
-[![Kuwait](https://img.shields.io/badge/Made_in-Kuwait_🇰🇼-194D8C?style=flat-square)]()
+[![Live](https://img.shields.io/badge/Live-App-155DA1?style=flat-square)](https://siteq8.github.io/CyberPolicy-KW)
+[![Policies](https://img.shields.io/badge/سياسات-25-155DA1?style=flat-square)]()
+[![Bilingual](https://img.shields.io/badge/AR%20%7C%20EN-ثنائي_اللغة-155DA1?style=flat-square)]()
+[![Kuwait](https://img.shields.io/badge/صنع_في-الكويت_🇰🇼-155DA1?style=flat-square)]()
+[![License](https://img.shields.io/badge/رخصة-MIT-155DA1?style=flat-square)](LICENSE)
 
-**مستودع سياسات وإجراءات أمن المعلومات — الكويت**
+### مستودع سياسات وإجراءات أمن المعلومات — الكويت
 
-**Information Security Policies & Procedures Repository — Kuwait**
+### Information Security Policies & Procedures — Kuwait
 
-[عرض المستودع](https://siteq8.github.io/CyberPolicy-KW) · [السياسات](#السياسات) · [المعايير](#standards-alignment) · [الاستخدام](#usage)
+[عرض التطبيق](https://siteq8.github.io/CyberPolicy-KW) · [السياسات](#السياسات) · [المولّد](#مولّد-السياسات) · [متابعة الامتثال](#متابعة-الامتثال)
 
 </div>
 
 ---
 
-## نظرة عامة | Overview
+## نظرة عامة
 
-وجهتك الأولى لإعداد سياسات وإجراءات أمن المعلومات للمؤسسات الكويتية. المستودع يحتوي على **25 سياسة وإجراء ومعيار** جاهزة للتعديل والتطبيق، متوافقة مع المعايير المحلية والدولية، ومناسبة لجميع أنواع المؤسسات العاملة في الكويت.
+وجهتك الأولى لإعداد سياسات وإجراءات أمن المعلومات للمؤسسات الكويتية. يحتوي المستودع على **٢٥ سياسة وإجراء ومعيار** جاهزة للتعديل، مع **مولّد سياسات** للتصدير كوثائق، و**متابعة الامتثال المستمر** لكل معيار. المحتوى ثنائي اللغة (عربي + إنجليزي) ومتوافق مع:
 
-Your primary resource for building information security policies and procedures for organizations operating in Kuwait. Contains **25 ready-to-customize policies, procedures, and standards** aligned to local and international frameworks, suitable for all organization types.
-
-### لمن هذا المستودع؟ | Who Is This For?
-
-| الجهة | Description |
-|-------|-------------|
-| **الجهات الحكومية** | Government entities subject to CITRA regulations |
-| **البنوك والمؤسسات المالية** | Banks and financial institutions under CBK CORF |
-| **القطاع الخاص** | Private sector companies operating in Kuwait |
-| **المؤسسات الصغيرة والمتوسطة** | SMEs needing foundational security policies |
-| **شركات الاستشارات** | Consulting firms building policies for clients |
+| المعيار | الإصدار | الجهة |
+|---------|---------|-------|
+| **CBK CORF** | v1.0 | بنك الكويت المركزي — إطار المرونة السيبرانية والتشغيلية |
+| **NIST CSF** | v2.0 + SP 800-53 | المعهد الوطني للمعايير والتقنية |
+| **CIS Controls** | v8.1 | مركز أمن الإنترنت |
+| **ISO 27001** | 2022 — Annex A | المنظمة الدولية للتوحيد القياسي |
+| **CITRA** | — | هيئة تنظيم الاتصالات وتقنية المعلومات — الكويت |
 
 ---
 
-## المعايير المدعومة | Standards Alignment
+## الفئات المستهدفة
 
-| المعيار | الإصدار | التغطية |
-|---------|---------|---------|
-| **CBK CORF** | v1.0 | إطار المرونة السيبرانية والتشغيلية — بنك الكويت المركزي |
-| **NIST CSF** | v2.0 + SP 800-53 | إطار الأمن السيبراني الوطني الأمريكي |
-| **CIS Controls** | v8.1 | ضوابط مركز أمن الإنترنت |
-| **ISO 27001** | 2022 — Annex A | المعيار الدولي لإدارة أمن المعلومات |
-| **CITRA** | هيئة تنظيم الاتصالات وتقنية المعلومات — الكويت |
+- **الجهات الحكومية الكويتية** — الخاضعة لأنظمة CITRA
+- **البنوك والمؤسسات المالية** — الخاضعة لإطار CBK CORF
+- **القطاع الخاص** — الشركات العاملة في الكويت
+- **المؤسسات الصغيرة والمتوسطة** — السياسات الأساسية
+- **شركات الاستشارات الأمنية** — بناء سياسات للعملاء
 
 ---
 
-## السياسات | Policies
+## المميزات
 
-### الحوكمة وإدارة المخاطر | Governance & Risk
+### تصفّح السياسات والإجراءات
+- ٢٥ سياسة وإجراء ومعيار
+- تصفية حسب نوع المؤسسة (حكومي، مالي، خاص، صغيرة)
+- تصفية حسب المعيار (CORF، NIST، ISO، CIS، CITRA)
+- عرض تفصيلي: الغرض، النطاق، المتطلبات، المراجع
+- كل سياسة بالعربية والإنجليزية
+
+### مولّد السياسات
+- اختر نوع الوثيقة: سياسة، إجراء، إرشاد، معيار
+- أدخل اسم المؤسسة
+- اختر اللغة والمعايير المرجعية
+- معاينة فورية للوثيقة
+- **تصدير DOCX** — وثيقة Word جاهزة
+- **تصدير PDF** — للطباعة والأرشفة
+- **نسخ النص** — للصق في أي برنامج
+
+### متابعة الامتثال المستمر
+- لوحة متابعة لكل معيار (CORF، NIST، ISO، CIS، CITRA)
+- حدّد الضوابط المطبقة بالنقر
+- نسبة الامتثال الفعلية لكل معيار
+- ألوان حسب المستوى (أخضر ≥80%، أصفر ≥50%، أحمر <50%)
+- حفظ تلقائي — البيانات تبقى عند العودة
+- عدد الضوابط المطبقة والمتبقية
+
+---
+
+## السياسات
+
+### الحوكمة وإدارة المخاطر
 
 | # | السياسة | Policy | النوع |
 |---|---------|--------|-------|
@@ -60,7 +82,7 @@ Your primary resource for building information security policies and procedures 
 | 02 | سياسة إدارة المخاطر | Risk Management Policy | سياسة |
 | 15 | سياسة الأطراف الثالثة | Third-Party Security Policy | سياسة |
 
-### التقنية والبنية التحتية | Technical & Infrastructure
+### التقنية والبنية التحتية
 
 | # | السياسة | Policy | النوع |
 |---|---------|--------|-------|
@@ -74,16 +96,16 @@ Your primary resource for building information security policies and procedures 
 | 16 | سياسة أمن نقاط النهاية | Endpoint Security Policy | سياسة |
 | 21 | سياسة البريد الإلكتروني | Email Security Policy | سياسة |
 | 24 | إجراءات إدارة الهوية | Identity Management Procedure | إجراء |
-| 25 | معيار تكوين الأنظمة الآمن | Secure Configuration Standard | معيار |
+| 25 | معيار التكوين الآمن | Secure Configuration Standard | معيار |
 
-### البيانات والخصوصية | Data & Privacy
+### البيانات والخصوصية
 
 | # | السياسة | Policy | النوع |
 |---|---------|--------|-------|
 | 04 | سياسة تصنيف المعلومات | Information Classification Policy | سياسة |
 | 14 | سياسة حماية البيانات | Data Protection & Privacy Policy | سياسة |
 
-### العمليات والاستمرارية | Operations & Continuity
+### العمليات والاستمرارية
 
 | # | السياسة | Policy | النوع |
 |---|---------|--------|-------|
@@ -94,58 +116,37 @@ Your primary resource for building information security policies and procedures 
 | 20 | سياسة النسخ الاحتياطي | Backup Policy | سياسة |
 | 23 | إجراءات إدارة التغيير | Change Management Procedure | إجراء |
 
-### الموارد البشرية | Human Resources
+### الموارد البشرية
 
 | # | السياسة | Policy | النوع |
 |---|---------|--------|-------|
 | 06 | سياسة أمن الموارد البشرية | HR Security Policy | سياسة |
-| 17 | سياسة التوعية والتدريب | Security Awareness Policy | سياسة |
+| 17 | سياسة التوعية الأمنية | Security Awareness Policy | سياسة |
 | 22 | سياسة الاستخدام المقبول | Acceptable Use Policy | سياسة |
 
 ---
 
-## المميزات | Features
+## الاستخدام
 
-- **ثنائي اللغة** — كل سياسة بالعربية والإنجليزية (الغرض، النطاق، المتطلبات)
-- **مرجعية شاملة** — كل بند مرتبط بمعيار محدد (CORF, NIST, ISO, CIS, CITRA)
-- **تصفية ذكية** — حسب حجم المؤسسة (حكومي، مالي، خاص، صغيرة) والمعيار
-- **جاهزة للتعديل** — قابلة للتخصيص حسب طبيعة عمل المؤسسة
-- **واجهة تفاعلية** — عرض واستكشاف السياسات مباشرة من المتصفح
-- **نافذة عرض** — عرض تفصيلي لكل سياسة (الغرض، النطاق، المتطلبات، المراجع)
-- **مفتوح المصدر** — MIT License
-
----
-
-## الاستخدام | Usage
-
-### مباشرة | Online
+### مباشرة
 
 **[https://siteq8.github.io/CyberPolicy-KW](https://siteq8.github.io/CyberPolicy-KW)**
 
-### محلياً | Local
+### محلياً
 
 ```bash
 git clone https://github.com/SiteQ8/CyberPolicy-KW.git
-cd CyberPolicy-KW
 open docs/index.html
 ```
 
-### كيفية الاستخدام
-
-1. اختر **حجم ونوع المؤسسة** (حكومي، مالي، خاص، صغيرة)
-2. اختر **المعيار** (CORF، NIST، ISO، CIS، CITRA) أو عرض الكل
-3. اضغط على أي سياسة لعرض التفاصيل
-4. انسخ وعدّل حسب طبيعة عمل مؤسستك
-
 ---
 
-## الرخصة | License
+## الرخصة
 
 MIT — مفتوح المصدر بالكامل
 
 ---
 
 <div align="center">
-  <sub>CyberPolicy-KW — سياسات وإجراءات أمن المعلومات — الكويت 🇰🇼</sub><br>
-  <sub><a href="https://github.com/SiteQ8">@SiteQ8</a> — Ali AlEnezi</sub>
+  <sub>صنع في الكويت 🇰🇼 — <a href="https://github.com/SiteQ8">@SiteQ8</a> — Ali AlEnezi</sub>
 </div>
