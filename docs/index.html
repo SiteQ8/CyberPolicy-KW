@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="سياسات وإجراءات أمن المعلومات للمؤسسات الكويتية | Information Security Policies for Kuwait Organizations | CBK CORF, NIST, CIS, ISO 27001, CITRA">
+<title>CyberPolicy-KW — سياسات أمن المعلومات</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><rect width='16' height='16' rx='3' fill='%23194D8C'/><text x='8' y='12' text-anchor='middle' font-size='9' fill='white' font-weight='bold'>CP</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#F8F7F4;--bg2:#EFEDE8;--surface:#FFFFFF;--ink:#1A1A19;--ink2:#4A4A48;--ink3:#8A8A87;--ink4:#BEBEB9;
+--blue:#194D8C;--blue2:#1A5FA8;--blue-pale:#EBF2FA;--red:#C92A2A;--green:#2B8A3E;--amber:#E67700;
+--border:#DDD9D0;--border2:#C8C3B8;
+--ar:'Noto Naskh Arabic',serif;--en:'DM Sans',system-ui,sans-serif;--mono:'DM Mono',monospace;--display:'Playfair Display',serif}
+html{font-size:15px;scroll-behavior:smooth}
+body{font-family:var(--ar);background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.02'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;opacity:0.4}
+.wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+
+/* Top */
+.top{border-bottom:2px solid var(--ink);padding:12px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.top-brand{font-family:var(--ar);font-size:0.88rem;font-weight:700;color:var(--blue)}
+.top-en{font-family:var(--mono);font-size:0.65rem;color:var(--ink3);letter-spacing:1px}
+.top-links{display:flex;gap:14px}
+.top-links a{font-family:var(--mono);font-size:0.65rem;color:var(--ink3);text-decoration:none;letter-spacing:0.5px}
+.top-links a:hover{color:var(--blue)}
+.lang-btn{padding:4px 12px;border:1.5px solid var(--border);border-radius:4px;background:none;font-family:var(--mono);font-size:0.65rem;color:var(--ink2);cursor:pointer;letter-spacing:0.5px}
+.lang-btn:hover{border-color:var(--blue);color:var(--blue)}
+
+/* Hero */
+.hero{padding:60px 0 48px;border-bottom:1px solid var(--border)}
+.hero-ey{font-family:var(--mono);font-size:0.62rem;color:var(--blue);letter-spacing:3px;text-transform:uppercase;margin-bottom:14px;direction:ltr;text-align:right}
+.hero h1{font-family:var(--ar);font-size:2.2rem;font-weight:700;line-height:1.6;margin-bottom:8px}
+.hero-en{font-family:var(--display);font-size:1.6rem;font-weight:400;color:var(--ink2);font-style:italic;margin-bottom:16px;direction:ltr;text-align:right}
+.hero-desc{font-size:0.95rem;color:var(--ink2);line-height:2;margin-bottom:10px}
+.hero-desc-en{font-family:var(--en);font-size:0.88rem;color:var(--ink3);line-height:1.7;direction:ltr;text-align:right;margin-bottom:28px}
+.hero-acts{display:flex;gap:10px;flex-wrap:wrap}
+.btn-fill{padding:11px 26px;background:var(--blue);color:#fff;border:none;border-radius:4px;font-family:var(--mono);font-size:0.75rem;letter-spacing:0.5px;cursor:pointer;text-decoration:none}
+.btn-fill:hover{background:var(--blue2)}
+.btn-out{padding:11px 26px;background:none;border:1.5px solid var(--ink);color:var(--ink);border-radius:4px;font-family:var(--mono);font-size:0.75rem;letter-spacing:0.5px;cursor:pointer;text-decoration:none}
+.btn-out:hover{border-color:var(--blue);color:var(--blue)}
+
+/* Standards strip */
+.stds{display:grid;grid-template-columns:repeat(5,1fr);border-bottom:1px solid var(--border)}
+@media(max-width:600px){.stds{grid-template-columns:repeat(3,1fr)}}
+.std-box{padding:24px 0;text-align:center;border-left:1px solid var(--border)}
+.std-box:first-child{border-left:none}
+.std-name{font-family:var(--mono);font-size:0.72rem;font-weight:500;color:var(--blue)}
+.std-sub{font-size:0.58rem;color:var(--ink4);margin-top:2px}
+
+/* Filters */
+.filters{padding:20px 0;display:flex;gap:8px;flex-wrap:wrap;border-bottom:1px solid var(--border)}
+.filter-btn{padding:7px 16px;border:1.5px solid var(--border);border-radius:4px;background:none;font-family:var(--ar);font-size:0.78rem;color:var(--ink2);cursor:pointer;transition:all .12s}
+.filter-btn.on{border-color:var(--blue);color:var(--blue);background:var(--blue-pale)}
+.filter-btn:hover:not(.on){border-color:var(--ink3)}
+
+/* Stats */
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-bottom:1px solid var(--border)}
+@media(max-width:600px){.stats-row{grid-template-columns:repeat(2,1fr)}}
+.st{padding:24px 0;text-align:center;border-left:1px solid var(--border)}
+.st:first-child{border-left:none}
+.st-n{font-family:var(--display);font-size:2.6rem;font-weight:400;color:var(--ink)}
+.st-n.bl{color:var(--blue)}
+.st-l{font-family:var(--mono);font-size:0.58rem;color:var(--ink3);letter-spacing:2px;text-transform:uppercase;margin-top:4px}
+
+/* Policy Grid */
+.section{padding:40px 0;border-bottom:1px solid var(--border)}
+.sec-ey{font-family:var(--mono);font-size:0.58rem;color:var(--blue);letter-spacing:3px;text-transform:uppercase;margin-bottom:8px;direction:ltr;text-align:right}
+.sec-t{font-family:var(--ar);font-size:1.5rem;font-weight:700;margin-bottom:6px}
+.sec-d{font-size:0.88rem;color:var(--ink2);line-height:1.9;margin-bottom:24px}
+
+.pol-grid{display:flex;flex-direction:column;gap:0}
+.pol-row{display:grid;grid-template-columns:48px 1fr auto;gap:0;border-top:1px solid var(--border);cursor:pointer;transition:background .08s}
+.pol-row:hover{background:var(--bg2)}
+.pol-num{padding:16px 0;font-family:var(--mono);font-size:0.68rem;color:var(--ink4);padding-right:12px;text-align:center}
+.pol-row:hover .pol-num{color:var(--blue)}
+.pol-body{padding:16px 0}
+.pol-title{font-weight:600;font-size:0.9rem;margin-bottom:2px}
+.pol-title-en{font-family:var(--en);font-size:0.75rem;color:var(--ink3);direction:ltr;text-align:right}
+.pol-tags{display:flex;gap:4px;flex-wrap:wrap;margin-top:6px}
+.pol-tag{font-family:var(--mono);font-size:0.55rem;padding:2px 8px;border-radius:2px;background:var(--bg2);color:var(--ink3);border:1px solid var(--border)}
+.pol-tag.corf{background:#EBF2FA;color:var(--blue);border-color:#C5D9F0}
+.pol-tag.nist{background:#F0F5EB;color:#2B8A3E;border-color:#C5E0B4}
+.pol-tag.iso{background:#F5EBF5;color:#862E9C;border-color:#D8B4E0}
+.pol-tag.cis{background:#FFF8E1;color:#E67700;border-color:#F5DFA6}
+.pol-tag.citra{background:#FFF0F0;color:#C92A2A;border-color:#F5C6C6}
+.pol-type{padding:16px 0;display:flex;align-items:center;gap:6px}
+.pol-badge{font-family:var(--mono);font-size:0.55rem;padding:3px 10px;border-radius:2px;letter-spacing:0.5px}
+.badge-policy{background:var(--blue-pale);color:var(--blue);border:1px solid #C5D9F0}
+.badge-proc{background:#F0F5EB;color:#2B8A3E;border:1px solid #C5E0B4}
+.badge-guide{background:#FFF8E1;color:#E67700;border:1px solid #F5DFA6}
+.badge-std{background:#F5EBF5;color:#862E9C;border:1px solid #D8B4E0}
+
+/* Modal */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:1000;display:none;align-items:flex-start;justify-content:center;padding:40px 16px;overflow-y:auto;backdrop-filter:blur(4px)}
+.modal-overlay.on{display:flex}
+.modal{background:var(--surface);border-radius:8px;max-width:800px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,0.15);max-height:90vh;overflow-y:auto}
+.modal-head{padding:20px 24px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:start;position:sticky;top:0;background:var(--surface);z-index:1}
+.modal-head h2{font-size:1.1rem;font-weight:700}
+.modal-head-en{font-family:var(--en);font-size:0.82rem;color:var(--ink3);direction:ltr;margin-top:2px}
+.modal-close{background:none;border:1.5px solid var(--border);color:var(--ink3);width:32px;height:32px;border-radius:4px;cursor:pointer;font-size:1rem;flex-shrink:0}
+.modal-close:hover{border-color:var(--red);color:var(--red)}
+.modal-body{padding:24px}
+.modal-section{margin-bottom:24px}
+.modal-section h3{font-size:0.88rem;font-weight:700;color:var(--blue);margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid var(--border)}
+.modal-section h3 span{font-family:var(--en);font-size:0.75rem;color:var(--ink3);font-weight:400;direction:ltr;display:inline}
+.modal-section p,.modal-section li{font-size:0.85rem;line-height:2;color:var(--ink2)}
+.modal-section ul{padding-right:20px}
+.modal-section .en-block{font-family:var(--en);direction:ltr;text-align:left;margin-top:12px;padding-top:12px;border-top:1px solid var(--border);color:var(--ink3);font-size:0.82rem;line-height:1.7}
+.modal-tags{display:flex;gap:4px;flex-wrap:wrap;margin-top:10px}
+
+.org-selector{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.org-btn{padding:8px 18px;border:1.5px solid var(--border);border-radius:4px;background:none;font-family:var(--ar);font-size:0.78rem;color:var(--ink2);cursor:pointer}
+.org-btn.on{border-color:var(--blue);color:var(--blue);background:var(--blue-pale)}
+
+.footer{padding:40px 0;text-align:center;border-top:2px solid var(--ink);margin-top:40px}
+.footer-brand{font-family:var(--ar);font-size:1.2rem;font-weight:700;color:var(--ink);margin-bottom:4px}
+.footer-sub{font-family:var(--mono);font-size:0.6rem;color:var(--ink3);letter-spacing:1.5px;text-transform:uppercase}
+.footer-links{margin-top:12px;display:flex;gap:16px;justify-content:center}
+.footer-links a{font-family:var(--mono);font-size:0.65rem;color:var(--ink3);text-decoration:none}
+.footer-links a:hover{color:var(--blue)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="top">
+    <div><div class="top-brand">CyberPolicy-KW — سياسات أمن المعلومات</div><div class="top-en">Information Security Policies & Procedures — Kuwait</div></div>
+    <div style="display:flex;gap:8px;align-items:center">
+        <div class="top-links">
+            <a href="https://github.com/SiteQ8/CyberPolicy-KW">GitHub</a>
+            <a href="https://github.com/SiteQ8/CyberPolicy-KW/issues">Issues</a>
+        </div>
+    </div>
+</div>
+
+<div class="hero">
+    <div class="hero-ey">CBK CORF · NIST CSF · CIS CONTROLS · ISO 27001 · CITRA</div>
+    <h1>مستودع سياسات وإجراءات أمن المعلومات</h1>
+    <div class="hero-en">Information Security Policies & Procedures Repository</div>
+    <div class="hero-desc">وجهتك الأولى لإعداد سياسات وإجراءات أمن المعلومات للمؤسسات الكويتية. سياسات وإجراءات ومعايير وإرشادات جاهزة للتعديل ومتوافقة مع المعايير المحلية والدولية. مناسبة للجهات الحكومية والقطاع الخاص والمؤسسات المالية وجميع الجهات العاملة في الكويت.</div>
+    <div class="hero-desc-en">Your primary resource for building information security policies and procedures for Kuwait organizations. Ready-to-customize templates aligned to CBK CORF, NIST, CIS, ISO 27001, and CITRA. Suitable for government, private sector, financial institutions, and all entities operating in Kuwait.</div>
+    <div class="hero-acts">
+        <a class="btn-fill" href="https://github.com/SiteQ8/CyberPolicy-KW">عرض المستودع</a>
+        <a class="btn-out" href="https://github.com/SiteQ8/CyberPolicy-KW">View Repository</a>
+    </div>
+</div>
+
+<div class="stds">
+    <div class="std-box"><div class="std-name">CBK CORF</div><div class="std-sub">v1.0 — بنك الكويت المركزي</div></div>
+    <div class="std-box"><div class="std-name">NIST CSF</div><div class="std-sub">v2.0 + SP 800-53</div></div>
+    <div class="std-box"><div class="std-name">CIS Controls</div><div class="std-sub">v8.1</div></div>
+    <div class="std-box"><div class="std-name">ISO 27001</div><div class="std-sub">2022 — Annex A</div></div>
+    <div class="std-box"><div class="std-name">CITRA</div><div class="std-sub">هيئة تنظيم الاتصالات</div></div>
+</div>
+
+<div class="stats-row">
+    <div class="st"><div class="st-n bl">25</div><div class="st-l">سياسة / Policy</div></div>
+    <div class="st"><div class="st-n">25</div><div class="st-l">إجراء / Procedure</div></div>
+    <div class="st"><div class="st-n">10</div><div class="st-l">معيار / Standard</div></div>
+    <div class="st"><div class="st-n">5</div><div class="st-l">أُطر / Frameworks</div></div>
+</div>
+
+<!-- Org Size Filter -->
+<div class="section" style="padding-bottom:20px">
+    <div class="sec-ey">Organization Profile</div>
+    <div class="sec-t">اختر حجم ونوع المؤسسة</div>
+    <div class="sec-d">اختر لعرض السياسات المناسبة لمؤسستك. جميع السياسات قابلة للتعديل حسب طبيعة العمل.</div>
+    <div class="org-selector">
+        <button class="org-btn on" onclick="setOrg('all',this)">الكل</button>
+        <button class="org-btn" onclick="setOrg('gov',this)">حكومي</button>
+        <button class="org-btn" onclick="setOrg('fin',this)">مالي / بنوك</button>
+        <button class="org-btn" onclick="setOrg('priv',this)">قطاع خاص</button>
+        <button class="org-btn" onclick="setOrg('sme',this)">مؤسسات صغيرة</button>
+    </div>
+    <div class="filters" id="framework-filters">
+        <button class="filter-btn on" onclick="setFW('all',this)">الكل</button>
+        <button class="filter-btn" onclick="setFW('corf',this)">CBK CORF</button>
+        <button class="filter-btn" onclick="setFW('nist',this)">NIST</button>
+        <button class="filter-btn" onclick="setFW('iso',this)">ISO 27001</button>
+        <button class="filter-btn" onclick="setFW('cis',this)">CIS</button>
+        <button class="filter-btn" onclick="setFW('citra',this)">CITRA</button>
+    </div>
+</div>
+
+<!-- Policies List -->
+<div class="section" id="policies-section">
+    <div class="sec-ey">Policies & Procedures</div>
+    <div class="sec-t">السياسات والإجراءات</div>
+    <div class="pol-grid" id="pol-grid"></div>
+</div>
+
+</div>
+
+<!-- Modal -->
+<div class="modal-overlay" id="modal">
+    <div class="modal">
+        <div class="modal-head">
+            <div><h2 id="modal-title"></h2><div class="modal-head-en" id="modal-title-en"></div></div>
+            <button class="modal-close" onclick="closeModal()">×</button>
+        </div>
+        <div class="modal-body" id="modal-body"></div>
+    </div>
+</div>
+
+<div class="wrap">
+<div class="footer">
+    <div class="footer-brand">CyberPolicy-KW</div>
+    <div class="footer-sub">Information Security Policies & Procedures — Kuwait</div>
+    <div class="footer-links">
+        <a href="https://github.com/SiteQ8/CyberPolicy-KW">GitHub</a>
+        <a href="https://github.com/SiteQ8">@SiteQ8</a>
+        <span style="font-family:var(--mono);font-size:0.65rem;color:var(--ink3)">Ali AlEnezi</span>
+        <a href="https://github.com/SiteQ8/CyberPolicy-KW/blob/main/LICENSE">MIT</a>
+    </div>
+</div>
+</div>
+
+<script>
+const POLICIES=[
+// ═══ GOVERNANCE & MANAGEMENT ═══
+{id:1,ar:'سياسة أمن المعلومات',en:'Information Security Policy',type:'policy',cat:'gov',
+fw:['corf','nist','iso','cis','citra'],org:['gov','fin','priv','sme'],
+ar_purpose:'تحدد هذه السياسة الإطار العام لحماية أصول المعلومات في المؤسسة وتوجيه جميع الأنشطة المتعلقة بأمن المعلومات.',
+en_purpose:'Establishes the overarching framework for protecting organizational information assets and directing all information security activities.',
+ar_scope:'تسري على جميع الموظفين والمتعاقدين والأطراف الثالثة التي تتعامل مع أصول المعلومات.',
+en_scope:'Applies to all employees, contractors, and third parties who access or handle information assets.',
+ar_items:['تعيين مسؤول أمن المعلومات (CISO) بصلاحيات مباشرة','اعتماد إطار حوكمة أمن المعلومات','مراجعة السياسة سنوياً أو عند حدوث تغييرات جوهرية','تخصيص ميزانية كافية لأمن المعلومات','الالتزام بالتشريعات المحلية (CITRA) والمعايير الدولية','تصنيف المعلومات حسب مستوى الحساسية','إنشاء لجنة أمن المعلومات على مستوى الإدارة العليا'],
+en_items:['Appoint CISO with direct executive reporting authority','Adopt information security governance framework','Review policy annually or upon significant changes','Allocate adequate budget for information security','Comply with local regulations (CITRA) and international standards','Classify information according to sensitivity levels','Establish executive-level information security committee'],
+refs:'CORF 1.1-1.5 | ISO 27001 A.5 | NIST CSF GV | CIS Control 1 | CITRA Ch.2'},
+
+{id:2,ar:'سياسة إدارة المخاطر',en:'Risk Management Policy',type:'policy',cat:'gov',
+fw:['corf','nist','iso','cis'],org:['gov','fin','priv','sme'],
+ar_purpose:'تحدد منهجية تقييم وإدارة مخاطر أمن المعلومات بشكل منظم ومستمر.',
+en_purpose:'Defines the methodology for systematic and ongoing assessment and management of information security risks.',
+ar_scope:'جميع الأصول المعلوماتية والأنظمة والعمليات التشغيلية.',
+en_scope:'All information assets, systems, and operational processes.',
+ar_items:['إجراء تقييم مخاطر شامل سنوياً كحد أدنى','استخدام منهجية معتمدة (NIST RMF / ISO 27005)','تصنيف المخاطر حسب الاحتمالية والأثر','وضع خطة معالجة للمخاطر ذات الأولوية','رفع تقارير المخاطر للجنة أمن المعلومات دورياً','مراجعة سجل المخاطر عند كل تغيير جوهري','تحديد مستوى تقبل المخاطر (Risk Appetite) من الإدارة العليا'],
+en_items:['Conduct comprehensive risk assessment annually at minimum','Use approved methodology (NIST RMF / ISO 27005)','Classify risks by likelihood and impact','Develop treatment plans for prioritized risks','Report risks to information security committee periodically','Review risk register upon every significant change','Define risk appetite with executive management approval'],
+refs:'CORF 2.1-2.4 | ISO 27001 A.6 | NIST CSF ID.RA | CIS Control 1'},
+
+{id:3,ar:'سياسة التحكم بالوصول',en:'Access Control Policy',type:'policy',cat:'tech',
+fw:['corf','nist','iso','cis','citra'],org:['gov','fin','priv','sme'],
+ar_purpose:'تنظم منح وإدارة ومراجعة صلاحيات الوصول إلى الأنظمة والمعلومات.',
+en_purpose:'Governs the granting, management, and review of access permissions to systems and information.',
+ar_scope:'جميع الأنظمة والتطبيقات والبيانات في المؤسسة.',
+en_scope:'All organizational systems, applications, and data.',
+ar_items:['تطبيق مبدأ الحد الأدنى من الصلاحيات (Least Privilege)','تطبيق المصادقة متعددة العوامل (MFA) لجميع الأنظمة الحساسة','مراجعة صلاحيات المستخدمين كل 90 يوماً','إلغاء الوصول فوراً عند انتهاء الخدمة','فصل المهام (Segregation of Duties) للعمليات الحساسة','تسجيل جميع محاولات الوصول الناجحة والفاشلة','استخدام حسابات مسماة وعدم مشاركة كلمات المرور','إدارة الحسابات المميزة (Privileged Access Management)'],
+en_items:['Apply Least Privilege principle for all access','Enforce MFA for all sensitive systems','Review user permissions every 90 days','Revoke access immediately upon termination','Implement Segregation of Duties for sensitive operations','Log all successful and failed access attempts','Use named accounts; no shared passwords','Implement Privileged Access Management (PAM)'],
+refs:'CORF 3.1-3.8 | ISO 27001 A.8 | NIST CSF PR.AC | CIS Control 5-6 | CITRA Ch.4'},
+
+{id:4,ar:'سياسة تصنيف المعلومات',en:'Information Classification Policy',type:'policy',cat:'data',
+fw:['corf','nist','iso','cis'],org:['gov','fin','priv','sme'],
+ar_purpose:'تحدد مستويات تصنيف المعلومات وإجراءات التعامل مع كل مستوى.',
+en_purpose:'Defines information classification levels and handling procedures for each level.',
+ar_scope:'جميع المعلومات المنتجة والمستلمة والمعالجة.',
+en_scope:'All information produced, received, and processed.',
+ar_items:['اعتماد أربعة مستويات: سري للغاية، سري، داخلي، عام','وضع علامات التصنيف على جميع الوثائق','تحديد ضوابط النقل والتخزين والإتلاف لكل مستوى','تدريب الموظفين على التعامل مع كل مستوى تصنيف','مراجعة التصنيف عند تغير طبيعة المعلومات','تشفير المعلومات السرية أثناء النقل والتخزين'],
+en_items:['Adopt four levels: Top Secret, Confidential, Internal, Public','Label classification on all documents','Define transfer, storage, and destruction controls per level','Train staff on handling procedures for each classification','Review classification when information nature changes','Encrypt confidential information in transit and at rest'],
+refs:'CORF 4.1 | ISO 27001 A.5.12-5.13 | NIST SP 800-60 | CIS Control 3'},
+
+{id:5,ar:'سياسة إدارة الأصول',en:'Asset Management Policy',type:'policy',cat:'tech',
+fw:['corf','nist','iso','cis'],org:['gov','fin','priv'],
+ar_purpose:'تنظم جرد وتصنيف وحماية جميع الأصول المعلوماتية والتقنية.',
+en_purpose:'Governs inventory, classification, and protection of all information and technology assets.',
+ar_scope:'الأجهزة والبرمجيات والبيانات والبنية التحتية.',
+en_scope:'Hardware, software, data, and infrastructure.',
+ar_items:['إنشاء سجل أصول شامل ومحدّث','تعيين مالك لكل أصل معلوماتي','جرد الأصول كل 6 أشهر','تحديد دورة حياة الأصل من الاستلام حتى الإتلاف','ربط كل أصل بمستوى تصنيف المعلومات','إدارة الأصول الشخصية (BYOD) بضوابط محددة'],
+en_items:['Maintain comprehensive and updated asset register','Assign owner for each information asset','Inventory assets every 6 months','Define asset lifecycle from acquisition to disposal','Link each asset to information classification level','Manage personal devices (BYOD) with defined controls'],
+refs:'CORF 4.2 | ISO 27001 A.5.9-5.11 | NIST CSF ID.AM | CIS Control 1-2'},
+
+{id:6,ar:'سياسة أمن الموارد البشرية',en:'Human Resources Security Policy',type:'policy',cat:'hr',
+fw:['corf','nist','iso','cis'],org:['gov','fin','priv','sme'],
+ar_purpose:'تحدد ضوابط أمن المعلومات المتعلقة بدورة حياة الموظف.',
+en_purpose:'Defines information security controls throughout the employee lifecycle.',
+ar_scope:'جميع الموظفين والمتعاقدين والمتدربين.',
+en_scope:'All employees, contractors, and trainees.',
+ar_items:['إجراء فحص أمني قبل التوظيف (Background Check)','توقيع اتفاقية السرية وعدم الإفصاح (NDA)','تدريب أمن المعلومات عند الالتحاق وسنوياً','إجراءات واضحة لإنهاء الخدمة (Exit Process)','إلغاء جميع الصلاحيات خلال 24 ساعة من إنهاء الخدمة','تحديد عقوبات مخالفة سياسات أمن المعلومات'],
+en_items:['Conduct pre-employment background checks','Sign NDA and confidentiality agreements','Mandatory security awareness training at onboarding and annually','Clear offboarding procedures (Exit Process)','Revoke all access within 24 hours of termination','Define disciplinary measures for policy violations'],
+refs:'CORF 5.1-5.3 | ISO 27001 A.6.1-6.6 | NIST CSF PR.AT | CIS Control 14'},
+
+{id:7,ar:'سياسة التشفير',en:'Cryptography Policy',type:'policy',cat:'tech',
+fw:['corf','nist','iso','cis'],org:['gov','fin','priv'],
+ar_purpose:'تحدد معايير ومتطلبات التشفير لحماية البيانات أثناء النقل والتخزين.',
+en_purpose:'Defines encryption standards and requirements for data protection in transit and at rest.',
+ar_scope:'جميع البيانات الحساسة والسرية.',
+en_scope:'All sensitive and confidential data.',
+ar_items:['استخدام AES-256 للتشفير أثناء التخزين','استخدام TLS 1.2+ للتشفير أثناء النقل','إدارة مفاتيح التشفير بنظام مركزي (KMS)','تدوير مفاتيح التشفير حسب الجدول المعتمد','عدم استخدام خوارزميات ضعيفة (DES, RC4, MD5)','تشفير البريد الإلكتروني للمراسلات السرية'],
+en_items:['Use AES-256 for encryption at rest','Use TLS 1.2+ for encryption in transit','Manage encryption keys centrally (KMS)','Rotate encryption keys per approved schedule','Prohibit weak algorithms (DES, RC4, MD5)','Encrypt email for confidential communications'],
+refs:'CORF 6.1 | ISO 27001 A.8.24 | NIST SP 800-57 | CIS Control 3'},
+
+{id:8,ar:'سياسة أمن الشبكات',en:'Network Security Policy',type:'policy',cat:'tech',
+fw:['corf','nist','iso','cis','citra'],org:['gov','fin','priv'],
+ar_purpose:'تحدد ضوابط حماية البنية التحتية للشبكات.',
+en_purpose:'Defines controls for protecting network infrastructure.',
+ar_scope:'جميع مكونات الشبكة الداخلية والخارجية.',
+en_scope:'All internal and external network components.',
+ar_items:['تقسيم الشبكة إلى مناطق أمنية (Network Segmentation)','تطبيق جدار حماية بين كل منطقة','مراقبة حركة الشبكة على مدار الساعة (NIDS/NIPS)','تعطيل المنافذ والبروتوكولات غير المستخدمة','تشفير جميع الاتصالات عبر الشبكات العامة','إدارة الشبكات اللاسلكية بمعايير WPA3','مراجعة قواعد جدار الحماية كل 6 أشهر','فصل شبكة الضيوف عن الشبكة الداخلية'],
+en_items:['Implement network segmentation into security zones','Deploy firewalls between each zone','Monitor network traffic 24/7 (NIDS/NIPS)','Disable unused ports and protocols','Encrypt all communications over public networks','Manage wireless networks with WPA3 standards','Review firewall rules every 6 months','Isolate guest network from internal network'],
+refs:'CORF 7.1-7.4 | ISO 27001 A.8.20-8.22 | NIST CSF PR.AC | CIS Control 12-13 | CITRA Ch.5'},
+
+{id:9,ar:'سياسة إدارة الحوادث الأمنية',en:'Security Incident Management Policy',type:'policy',cat:'ops',
+fw:['corf','nist','iso','cis','citra'],org:['gov','fin','priv','sme'],
+ar_purpose:'تحدد إجراءات الكشف والاستجابة والتعافي من الحوادث الأمنية.',
+en_purpose:'Defines procedures for detecting, responding to, and recovering from security incidents.',
+ar_scope:'جميع الحوادث الأمنية المؤكدة والمشتبه بها.',
+en_scope:'All confirmed and suspected security incidents.',
+ar_items:['تشكيل فريق الاستجابة للحوادث (CSIRT)','تصنيف الحوادث حسب الخطورة (P1-P4)','الإبلاغ الفوري للحوادث الحرجة خلال ساعة واحدة','التنسيق مع الجهات التنظيمية (بنك الكويت المركزي / CITRA)','توثيق جميع الحوادث وإجراءات الاستجابة','إجراء تحليل ما بعد الحادث (Post-Incident Review)','تحديث الإجراءات بناءً على الدروس المستفادة','إجراء تمارين محاكاة سنوياً'],
+en_items:['Establish CSIRT (Computer Security Incident Response Team)','Classify incidents by severity (P1-P4)','Report critical incidents within 1 hour','Coordinate with regulators (CBK / CITRA)','Document all incidents and response actions','Conduct post-incident review','Update procedures based on lessons learned','Conduct annual simulation exercises'],
+refs:'CORF 8.1-8.6 | ISO 27001 A.5.24-5.28 | NIST CSF RS | CIS Control 17 | CITRA Ch.7'},
+
+{id:10,ar:'سياسة استمرارية الأعمال',en:'Business Continuity Policy',type:'policy',cat:'ops',
+fw:['corf','nist','iso'],org:['gov','fin','priv'],
+ar_purpose:'تضمن استمرار العمليات الحيوية أثناء وبعد الكوارث والأزمات.',
+en_purpose:'Ensures continuity of critical operations during and after disasters and crises.',
+ar_scope:'جميع العمليات والأنظمة الحيوية.',
+en_scope:'All critical operations and systems.',
+ar_items:['إجراء تحليل أثر الأعمال (BIA) سنوياً','تحديد RTO و RPO لكل نظام حيوي','وضع خطط استمرارية لكل وحدة عمل','إنشاء موقع بديل للتعافي من الكوارث (DR Site)','اختبار خطط الاستمرارية كل 6 أشهر','النسخ الاحتياطي وفق قاعدة 3-2-1','تدريب الموظفين على إجراءات الطوارئ'],
+en_items:['Conduct Business Impact Analysis (BIA) annually','Define RTO and RPO for each critical system','Develop continuity plans for each business unit','Establish Disaster Recovery (DR) site','Test continuity plans every 6 months','Backup using 3-2-1 rule','Train staff on emergency procedures'],
+refs:'CORF 9.1-9.5 | ISO 27001 A.5.29-5.30 | NIST CSF RC'},
+
+{id:11,ar:'سياسة إدارة الثغرات الأمنية',en:'Vulnerability Management Policy',type:'policy',cat:'tech',
+fw:['corf','nist','iso','cis'],org:['gov','fin','priv'],
+ar_purpose:'تنظم اكتشاف ومعالجة الثغرات الأمنية في الأنظمة والتطبيقات.',
+en_purpose:'Governs discovery and remediation of security vulnerabilities in systems and applications.',
+ar_scope:'جميع الأنظمة والتطبيقات والبنية التحتية.',
+en_scope:'All systems, applications, and infrastructure.',
+ar_items:['فحص الثغرات شهرياً للأنظمة الداخلية','فحص الثغرات أسبوعياً للأنظمة المواجهة للإنترنت','معالجة الثغرات الحرجة خلال 48 ساعة','معالجة الثغرات عالية الخطورة خلال 7 أيام','إجراء اختبار اختراق سنوياً بواسطة جهة مستقلة','متابعة نشرات الأمان من المصنّعين','تحديث الأنظمة والبرمجيات بشكل دوري'],
+en_items:['Scan internal systems monthly','Scan internet-facing systems weekly','Remediate critical vulnerabilities within 48 hours','Remediate high-severity vulnerabilities within 7 days','Conduct annual penetration test by independent third party','Monitor vendor security advisories','Patch systems and software regularly'],
+refs:'CORF 10.1-10.3 | ISO 27001 A.8.8 | NIST CSF ID.RA | CIS Control 7'},
+
+{id:12,ar:'سياسة أمن التطبيقات',en:'Application Security Policy',type:'policy',cat:'tech',
+fw:['corf','nist','iso','cis'],org:['gov','fin','priv'],
+ar_purpose:'تحدد ضوابط الأمن في دورة حياة تطوير البرمجيات.',
+en_purpose:'Defines security controls throughout the software development lifecycle.',
+ar_scope:'جميع التطبيقات المطورة داخلياً أو خارجياً.',
+en_scope:'All internally and externally developed applications.',
+ar_items:['تطبيق مبادئ التطوير الآمن (Secure SDLC)','مراجعة الكود المصدري قبل النشر','فحص الثغرات الأمنية في التطبيقات (SAST/DAST)','حماية واجهات البرمجة (API Security)','اختبار الأمان قبل الإطلاق','إدارة المكتبات المفتوحة المصدر (SCA)'],
+en_items:['Apply Secure SDLC principles','Conduct source code review before deployment','Scan applications for vulnerabilities (SAST/DAST)','Implement API Security controls','Security testing before release','Software Composition Analysis (SCA) for open source'],
+refs:'CORF 11.1 | ISO 27001 A.8.25-8.31 | NIST CSF PR.DS | CIS Control 16'},
+
+{id:13,ar:'سياسة الأمن السحابي',en:'Cloud Security Policy',type:'policy',cat:'tech',
+fw:['corf','nist','iso','cis','citra'],org:['gov','fin','priv'],
+ar_purpose:'تحدد ضوابط الأمن عند استخدام الخدمات السحابية.',
+en_purpose:'Defines security controls for cloud service usage.',
+ar_scope:'جميع الخدمات السحابية (IaaS, PaaS, SaaS).',
+en_scope:'All cloud services (IaaS, PaaS, SaaS).',
+ar_items:['تقييم مزود الخدمة السحابية قبل التعاقد','ضمان تخزين البيانات الحساسة داخل الكويت أو وفق موافقة الجهات التنظيمية','تشفير البيانات في السحابة (at rest + in transit)','إدارة الهوية والوصول السحابي (Cloud IAM)','مراقبة التكوينات السحابية (Cloud Security Posture Management)','تحديد المسؤوليات المشتركة مع مزود الخدمة','النسخ الاحتياطي المستقل عن مزود الخدمة'],
+en_items:['Assess cloud provider before contracting','Ensure sensitive data residency in Kuwait or per regulatory approval','Encrypt cloud data (at rest + in transit)','Manage Cloud IAM','Implement Cloud Security Posture Management (CSPM)','Define shared responsibility model','Maintain independent backups from provider'],
+refs:'CORF 12.1 | ISO 27001 A.5.23 | NIST CSF PR.DS | CIS Control 3 | CITRA Ch.6'},
+
+{id:14,ar:'سياسة حماية البيانات والخصوصية',en:'Data Protection & Privacy Policy',type:'policy',cat:'data',
+fw:['corf','nist','iso','citra'],org:['gov','fin','priv','sme'],
+ar_purpose:'تحدد ضوابط حماية البيانات الشخصية والحفاظ على الخصوصية.',
+en_purpose:'Defines controls for personal data protection and privacy preservation.',
+ar_scope:'جميع البيانات الشخصية للعملاء والموظفين.',
+en_scope:'All personal data of customers and employees.',
+ar_items:['الحصول على الموافقة قبل جمع البيانات الشخصية','تحديد الغرض من جمع البيانات وعدم استخدامها لغير ذلك','تطبيق مبدأ تقليل البيانات (Data Minimization)','تحديد فترة الاحتفاظ بالبيانات والإتلاف الآمن بعدها','حق الأفراد في الوصول والتصحيح والحذف','الإبلاغ عن خروقات البيانات خلال 72 ساعة','تعيين مسؤول حماية البيانات (DPO)'],
+en_items:['Obtain consent before collecting personal data','Define purpose of data collection','Apply Data Minimization principle','Define data retention periods and secure disposal','Individual rights: access, correction, deletion','Report data breaches within 72 hours','Appoint Data Protection Officer (DPO)'],
+refs:'CORF 13.1 | ISO 27001 A.5.34 | NIST Privacy Framework | CITRA Privacy Reg'},
+
+{id:15,ar:'سياسة الأطراف الثالثة والموردين',en:'Third-Party & Vendor Security Policy',type:'policy',cat:'gov',
+fw:['corf','nist','iso','cis'],org:['gov','fin','priv'],
+ar_purpose:'تحدد ضوابط أمن المعلومات عند التعامل مع أطراف ثالثة.',
+en_purpose:'Defines information security controls for third-party engagements.',
+ar_scope:'جميع الموردين ومقدمي الخدمات والشركاء.',
+en_scope:'All vendors, service providers, and partners.',
+ar_items:['تقييم أمني للمورد قبل التعاقد','تضمين بنود أمن المعلومات في العقود','حق التدقيق على الموردين','مراجعة أمن الموردين سنوياً','تحديد متطلبات الإبلاغ عن الحوادث','ضمان امتثال المورد للمعايير المحلية والدولية'],
+en_items:['Conduct security assessment before contracting','Include security clauses in contracts','Right to audit vendors','Annual vendor security review','Define incident notification requirements','Ensure vendor compliance with local and international standards'],
+refs:'CORF 14.1 | ISO 27001 A.5.19-5.22 | NIST CSF ID.SC | CIS Control 15'},
+
+{id:16,ar:'سياسة أمن نقاط النهاية',en:'Endpoint Security Policy',type:'policy',cat:'tech',
+fw:['corf','nist','iso','cis'],org:['gov','fin','priv','sme'],
+ar_purpose:'تحدد ضوابط حماية أجهزة المستخدمين والخوادم.',
+en_purpose:'Defines controls for protecting user devices and servers.',
+ar_scope:'جميع أجهزة الحاسوب والهواتف والأجهزة اللوحية.',
+en_scope:'All computers, phones, and tablets.',
+ar_items:['تثبيت برنامج مكافحة البرمجيات الخبيثة (EDR)','تحديث أنظمة التشغيل والبرمجيات تلقائياً','تشفير الأقراص الصلبة (Full Disk Encryption)','تفعيل جدار الحماية الشخصي','إدارة الأجهزة المحمولة (MDM)','تعطيل منافذ USB غير المصرح بها','قفل الشاشة بعد 5 دقائق من عدم النشاط'],
+en_items:['Deploy EDR/anti-malware solution','Auto-update operating systems and software','Enable Full Disk Encryption','Activate personal firewall','Implement Mobile Device Management (MDM)','Disable unauthorized USB ports','Screen lock after 5 minutes of inactivity'],
+refs:'CORF 15.1 | ISO 27001 A.8.1 | NIST CSF PR.PT | CIS Control 4,10'},
+
+{id:17,ar:'سياسة التوعية والتدريب الأمني',en:'Security Awareness & Training Policy',type:'policy',cat:'hr',
+fw:['corf','nist','iso','cis','citra'],org:['gov','fin','priv','sme'],
+ar_purpose:'تنظم برامج التوعية والتدريب على أمن المعلومات.',
+en_purpose:'Governs information security awareness and training programs.',
+ar_scope:'جميع الموظفين على مختلف المستويات.',
+en_scope:'All employees at all levels.',
+ar_items:['تدريب إلزامي عند الالتحاق بالعمل','تدريب تنشيطي سنوي لجميع الموظفين','محاكاة هجمات التصيد كل ربع سنة','تدريب متخصص للفريق التقني','قياس فعالية التدريب بالاختبارات','نشر نشرات توعوية شهرية','تدريب الإدارة العليا على مخاطر أمن المعلومات'],
+en_items:['Mandatory training at onboarding','Annual refresher training for all employees','Quarterly phishing simulation exercises','Specialized training for technical teams','Measure training effectiveness with assessments','Monthly security awareness bulletins','Executive-level security risk training'],
+refs:'CORF 16.1 | ISO 27001 A.6.3 | NIST CSF PR.AT | CIS Control 14 | CITRA Ch.3'},
+
+{id:18,ar:'سياسة السجلات والمراقبة',en:'Logging & Monitoring Policy',type:'policy',cat:'ops',
+fw:['corf','nist','iso','cis'],org:['gov','fin','priv'],
+ar_purpose:'تنظم جمع وحفظ ومراقبة السجلات الأمنية.',
+en_purpose:'Governs collection, retention, and monitoring of security logs.',
+ar_scope:'جميع الأنظمة والأجهزة والتطبيقات.',
+en_scope:'All systems, devices, and applications.',
+ar_items:['تجميع السجلات في نظام مركزي (SIEM)','مراقبة الأحداث الأمنية على مدار الساعة (SOC)','الاحتفاظ بالسجلات لمدة لا تقل عن سنة','حماية السجلات من التعديل والحذف','مزامنة الوقت لجميع الأنظمة (NTP)','إنشاء قواعد تنبيه للأحداث المشبوهة','مراجعة السجلات الحرجة يومياً'],
+en_items:['Centralize logs in SIEM','24/7 security event monitoring (SOC)','Retain logs for minimum 1 year','Protect logs from modification and deletion','Synchronize time across all systems (NTP)','Create alert rules for suspicious events','Review critical logs daily'],
+refs:'CORF 17.1 | ISO 27001 A.8.15-8.16 | NIST CSF DE.CM | CIS Control 8'},
+
+{id:19,ar:'سياسة الأمن المادي',en:'Physical Security Policy',type:'policy',cat:'ops',
+fw:['corf','nist','iso','cis'],org:['gov','fin','priv'],
+ar_purpose:'تحدد ضوابط الحماية المادية لمرافق تقنية المعلومات.',
+en_purpose:'Defines physical protection controls for IT facilities.',
+ar_scope:'مراكز البيانات وغرف الخوادم ومناطق العمل الحساسة.',
+en_scope:'Data centers, server rooms, and sensitive work areas.',
+ar_items:['نظام تحكم بالدخول (بطاقات / بيومتري)','كاميرات مراقبة مع احتفاظ بالتسجيلات 90 يوماً','نظام إنذار وكشف الحريق','تبريد مناسب لغرف الخوادم','مصدر طاقة احتياطي (UPS + مولد)','سجل زيارات لجميع الداخلين','فصل المناطق الآمنة عن المناطق العامة'],
+en_items:['Access control system (cards / biometric)','CCTV with 90-day recording retention','Fire detection and alarm systems','Adequate cooling for server rooms','Backup power (UPS + generator)','Visitor log for all entries','Separate secure areas from public areas'],
+refs:'CORF 18.1 | ISO 27001 A.7.1-7.14 | NIST CSF PR.AC | CIS Control 1'},
+
+{id:20,ar:'سياسة النسخ الاحتياطي',en:'Backup Policy',type:'policy',cat:'ops',
+fw:['corf','nist','iso','cis'],org:['gov','fin','priv','sme'],
+ar_purpose:'تنظم عمليات النسخ الاحتياطي واستعادة البيانات.',
+en_purpose:'Governs backup operations and data restoration procedures.',
+ar_scope:'جميع البيانات والأنظمة الحيوية.',
+en_scope:'All critical data and systems.',
+ar_items:['تطبيق قاعدة 3-2-1 (3 نسخ، 2 وسائط، 1 خارجي)','نسخ يومي للبيانات الحيوية','نسخ أسبوعي للأنظمة الكاملة','تشفير النسخ الاحتياطية','اختبار الاستعادة كل ربع سنة','تخزين نسخة في موقع جغرافي منفصل','توثيق إجراءات الاستعادة'],
+en_items:['Apply 3-2-1 rule (3 copies, 2 media, 1 offsite)','Daily backup for critical data','Weekly full system backup','Encrypt all backups','Test restoration quarterly','Store copy at geographically separate location','Document restoration procedures'],
+refs:'CORF 19.1 | ISO 27001 A.8.13 | NIST CSF PR.IP | CIS Control 11'},
+
+{id:21,ar:'سياسة البريد الإلكتروني',en:'Email Security Policy',type:'policy',cat:'tech',
+fw:['nist','iso','cis','citra'],org:['gov','fin','priv','sme'],
+ar_purpose:'تحدد ضوابط الاستخدام الآمن للبريد الإلكتروني.',
+en_purpose:'Defines secure email usage controls.',
+ar_scope:'جميع حسابات البريد الإلكتروني المؤسسية.',
+en_scope:'All organizational email accounts.',
+ar_items:['تفعيل SPF و DKIM و DMARC','فلترة البريد من البرمجيات الخبيثة والتصيد','عدم استخدام البريد المؤسسي لأغراض شخصية','تشفير المرفقات السرية','حظر إعادة التوجيه التلقائي للبريد الخارجي','أرشفة البريد وفق سياسة الاحتفاظ'],
+en_items:['Enable SPF, DKIM, and DMARC','Filter email for malware and phishing','No personal use of corporate email','Encrypt confidential attachments','Block automatic forwarding to external addresses','Archive email per retention policy'],
+refs:'ISO 27001 A.8.12 | NIST CSF PR.DS | CIS Control 9 | CITRA Ch.4'},
+
+{id:22,ar:'سياسة الاستخدام المقبول',en:'Acceptable Use Policy',type:'policy',cat:'hr',
+fw:['nist','iso','cis','citra'],org:['gov','fin','priv','sme'],
+ar_purpose:'تحدد الاستخدام المقبول لموارد تقنية المعلومات.',
+en_purpose:'Defines acceptable use of information technology resources.',
+ar_scope:'جميع مستخدمي موارد تقنية المعلومات.',
+en_scope:'All users of IT resources.',
+ar_items:['استخدام الموارد لأغراض العمل فقط','عدم تثبيت برمجيات غير مصرح بها','عدم مشاركة بيانات الدخول','الإبلاغ الفوري عن أي حادث أمني مشتبه به','الالتزام بحقوق الملكية الفكرية','عدم الوصول لمحتوى غير لائق أو غير قانوني'],
+en_items:['Use resources for business purposes only','No unauthorized software installation','No sharing of login credentials','Immediately report any suspected security incident','Comply with intellectual property rights','No access to inappropriate or illegal content'],
+refs:'ISO 27001 A.5.10 | NIST CSF PR.AT | CIS Control 14 | CITRA Ch.3'},
+
+{id:23,ar:'إجراءات إدارة التغيير',en:'Change Management Procedure',type:'proc',cat:'ops',
+fw:['corf','nist','iso','cis'],org:['gov','fin','priv'],
+ar_purpose:'تنظم عملية إدارة التغييرات على الأنظمة والبنية التحتية.',
+en_purpose:'Governs change management for systems and infrastructure.',
+ar_scope:'جميع التغييرات على أنظمة الإنتاج.',
+en_scope:'All changes to production systems.',
+ar_items:['تقديم طلب تغيير رسمي (RFC)','تقييم المخاطر والأثر قبل التنفيذ','اعتماد التغيير من لجنة التغيير (CAB)','اختبار التغيير في بيئة معزولة','خطة تراجع في حال الفشل','توثيق التغيير وإخطار المعنيين','مراجعة ما بعد التنفيذ (PIR)'],
+en_items:['Submit formal Request for Change (RFC)','Assess risk and impact before implementation','Approve through Change Advisory Board (CAB)','Test changes in isolated environment','Rollback plan in case of failure','Document changes and notify stakeholders','Post-Implementation Review (PIR)'],
+refs:'CORF 20.1 | ISO 27001 A.8.32 | NIST CSF PR.IP | CIS Control 4'},
+
+{id:24,ar:'إجراءات إدارة الهوية',en:'Identity Management Procedure',type:'proc',cat:'tech',
+fw:['corf','nist','iso','cis'],org:['gov','fin','priv'],
+ar_purpose:'تنظم دورة حياة حسابات المستخدمين والهويات الرقمية.',
+en_purpose:'Governs lifecycle of user accounts and digital identities.',
+ar_scope:'جميع حسابات المستخدمين في الأنظمة.',
+en_scope:'All user accounts across systems.',
+ar_items:['إنشاء الحساب بناءً على طلب رسمي معتمد','ربط الصلاحيات بالدور الوظيفي (RBAC)','مراجعة الحسابات غير النشطة شهرياً','تعطيل الحسابات بعد 60 يوماً من عدم الاستخدام','سياسة كلمة مرور قوية (12+ حرف، تعقيد، تغيير كل 90 يوماً)','المصادقة متعددة العوامل للأنظمة الحساسة','تسجيل جميع عمليات إدارة الحسابات'],
+en_items:['Create accounts based on approved formal request','Link permissions to job role (RBAC)','Review inactive accounts monthly','Disable accounts after 60 days of inactivity','Strong password policy (12+ chars, complexity, rotate every 90 days)','MFA for sensitive systems','Log all account management activities'],
+refs:'CORF 21.1 | ISO 27001 A.5.15-5.18 | NIST CSF PR.AC | CIS Control 5-6'},
+
+{id:25,ar:'معيار تكوين الأنظمة الآمن',en:'Secure Configuration Standard',type:'std',cat:'tech',
+fw:['corf','nist','iso','cis'],org:['gov','fin','priv'],
+ar_purpose:'يحدد معايير التكوين الآمن للأنظمة والخوادم والشبكات.',
+en_purpose:'Defines secure configuration baselines for systems, servers, and networks.',
+ar_scope:'جميع الخوادم ومحطات العمل ومعدات الشبكة.',
+en_scope:'All servers, workstations, and network equipment.',
+ar_items:['تطبيق معايير CIS Benchmarks كخط أساس','تعطيل الخدمات والمنافذ غير الضرورية','إزالة الحسابات والبرمجيات الافتراضية','تقييد صلاحيات المسؤول (Admin)','تفعيل السجلات والتدقيق','فحص التكوين تلقائياً بأدوات SCAP','توثيق أي انحراف عن المعيار مع مبرر'],
+en_items:['Apply CIS Benchmarks as baseline','Disable unnecessary services and ports','Remove default accounts and software','Restrict administrator privileges','Enable logging and auditing','Automated configuration scanning with SCAP tools','Document any deviation from standard with justification'],
+refs:'CORF 22.1 | ISO 27001 A.8.9 | NIST SP 800-128 | CIS Control 4'},
+];
+
+// ═══ APP LOGIC ═══
+let activeOrg='all',activeFW='all';
+
+function setOrg(o,el){
+    activeOrg=o;
+    document.querySelectorAll('.org-btn').forEach(b=>b.classList.remove('on'));
+    el.classList.add('on');
+    renderPolicies();
+}
+function setFW(fw,el){
+    activeFW=fw;
+    document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('on'));
+    el.classList.add('on');
+    renderPolicies();
+}
+
+function renderPolicies(){
+    const filtered=POLICIES.filter(p=>{
+        if(activeOrg!=='all'&&!p.org.includes(activeOrg))return false;
+        if(activeFW!=='all'&&!p.fw.includes(activeFW))return false;
+        return true;
+    });
+    document.getElementById('pol-grid').innerHTML=filtered.map(p=>{
+        const typeLabel={policy:'سياسة',proc:'إجراء',std:'معيار',guide:'إرشاد'}[p.type];
+        const typeBadge={policy:'badge-policy',proc:'badge-proc',std:'badge-std',guide:'badge-guide'}[p.type];
+        const tags=p.fw.map(f=>`<span class="pol-tag ${f}">${f.toUpperCase()}</span>`).join('');
+        return `<div class="pol-row" onclick="openPolicy(${p.id})">
+            <div class="pol-num">${String(p.id).padStart(2,'0')}</div>
+            <div class="pol-body">
+                <div class="pol-title">${p.ar}</div>
+                <div class="pol-title-en">${p.en}</div>
+                <div class="pol-tags">${tags}</div>
+            </div>
+            <div class="pol-type"><span class="pol-badge ${typeBadge}">${typeLabel}</span></div>
+        </div>`;
+    }).join('');
+}
+
+function openPolicy(id){
+    const p=POLICIES.find(x=>x.id===id);if(!p)return;
+    document.getElementById('modal-title').textContent=p.ar;
+    document.getElementById('modal-title-en').textContent=p.en;
+    const tags=p.fw.map(f=>`<span class="pol-tag ${f}">${f.toUpperCase()}</span>`).join('');
+    document.getElementById('modal-body').innerHTML=`
+        <div class="modal-section">
+            <h3>الغرض <span>— Purpose</span></h3>
+            <p>${p.ar_purpose}</p>
+            <div class="en-block">${p.en_purpose}</div>
+        </div>
+        <div class="modal-section">
+            <h3>النطاق <span>— Scope</span></h3>
+            <p>${p.ar_scope}</p>
+            <div class="en-block">${p.en_scope}</div>
+        </div>
+        <div class="modal-section">
+            <h3>المتطلبات <span>— Requirements</span></h3>
+            <ul>${p.ar_items.map(i=>`<li>${i}</li>`).join('')}</ul>
+            <div class="en-block"><ul style="padding-left:20px">${p.en_items.map(i=>`<li>${i}</li>`).join('')}</ul></div>
+        </div>
+        <div class="modal-section">
+            <h3>المراجع <span>— References</span></h3>
+            <p style="font-family:var(--mono);font-size:0.75rem;color:var(--ink3);direction:ltr;text-align:right">${p.refs}</p>
+            <div class="modal-tags" style="margin-top:12px">${tags}</div>
+        </div>`;
+    document.getElementById('modal').classList.add('on');
+}
+
+function closeModal(){document.getElementById('modal').classList.remove('on')}
+document.getElementById('modal').addEventListener('click',e=>{if(e.target.id==='modal')closeModal()});
+
+document.addEventListener('DOMContentLoaded',()=>{renderPolicies()});
+</script>
+</body>
+</html>
